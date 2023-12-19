@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Github User Search</string>
+    <string name="please_wait">Please Wait…</string>
+    <string name="error_message">Error Message</string>
+    <string name="followers">%d\nFollowers</string>
+    <string name="following">%d\nFollowing</string>
+    <string name="repositories">%d\nRepositories</string>
+    <string name="hint_searchbar">Mau cari apa?</string>
+    <string name="details_user">Details User</string>
+    <string name="tab_follower">FOLLOWERS</string>
+    <string name="tab_following">FOLLOWING</string>
+    <string name="github_logo">Github Logo</string>
+</resources>
