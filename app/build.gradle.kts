@@ -15,6 +15,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_TOKEN", "\"REPLACE_YOUR_API_TOKEN\"")
+        buildConfigField("String", "API_ENDPOINT", "\"https://api.github.com/\"")
     }
 
     buildFeatures {

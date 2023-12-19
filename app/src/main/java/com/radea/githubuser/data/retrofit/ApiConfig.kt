@@ -9,6 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
     companion object {
+        private const val apiEndpoint = BuildConfig.API_ENDPOINT
+        private const val apiToken = BuildConfig.API_TOKEN
         fun getApiService(): ApiService {
             val loggingInterceptor = if (BuildConfig.DEBUG) {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -19,7 +21,7 @@ class ApiConfig {
             val authInterceptor = Interceptor { chain ->
                 val req = chain.request()
                 val requestHeaders = req.newBuilder()
-                    .addHeader("Authorization", "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")
+                    .addHeader("Authorization", apiToken)
                     .build()
                 chain.proceed(requestHeaders)
             }
@@ -28,7 +30,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
+                .baseUrl(apiEndpoint)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
