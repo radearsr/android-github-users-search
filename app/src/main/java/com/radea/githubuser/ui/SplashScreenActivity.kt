@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import com.radea.githubuser.databinding.ActivitySplashScreenBinding
 
 @SuppressLint("CustomSplashScreen")
@@ -17,10 +18,14 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Handler().postDelayed(Runnable {
+        Handler(Looper.getMainLooper()).postDelayed(Runnable {
             val mainIntent = Intent(this@SplashScreenActivity, MainActivity::class.java)
             startActivity(mainIntent)
             finish()
-        }, 5000)
+        }, DELAY_SCREEN)
+    }
+
+    companion object {
+        const val DELAY_SCREEN = 5000L
     }
 }

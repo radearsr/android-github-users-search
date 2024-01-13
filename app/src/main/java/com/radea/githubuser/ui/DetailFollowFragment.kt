@@ -17,7 +17,7 @@ import com.radea.githubuser.databinding.FragmentDetailFollowBinding
 class DetailFollowFragment : Fragment() {
 
     private var _binding: FragmentDetailFollowBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
     private val detailViewModel by viewModels<DetailViewModel>()
 
     companion object {
@@ -28,9 +28,9 @@ class DetailFollowFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentDetailFollowBinding.inflate(inflater, container, false)
-        return binding.root
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,13 +55,13 @@ class DetailFollowFragment : Fragment() {
         }
 
         detailViewModel.isFollowerError.observe(viewLifecycleOwner) { error ->
-            binding.errorComp.tvErrorMessage.visibility = View.VISIBLE
-            binding.errorComp.tvErrorMessage.text = error
+            binding?.errorComp?.tvErrorMessage?.visibility = View.VISIBLE
+            binding?.errorComp?.tvErrorMessage?.text = error
         }
 
         detailViewModel.isFollowingError.observe(viewLifecycleOwner) { error ->
-            binding.errorComp.tvErrorMessage.visibility = View.VISIBLE
-            binding.errorComp.tvErrorMessage.text = error
+            binding?.errorComp?.tvErrorMessage?.visibility = View.VISIBLE
+            binding?.errorComp?.tvErrorMessage?.text = error
         }
 
         if (position == 1) {
@@ -78,9 +78,9 @@ class DetailFollowFragment : Fragment() {
     }
 
     private fun showRecyclerListFollow(users: List<ResponseUsersItem>) {
-        binding.rvFollow.layoutManager = LinearLayoutManager(requireContext())
+        binding?.rvFollow?.layoutManager = LinearLayoutManager(requireContext())
         val listFollowAdapter = UsersAdapter(users)
-        binding.rvFollow.adapter = listFollowAdapter
+        binding?.rvFollow?.adapter = listFollowAdapter
 
         listFollowAdapter.setOnItemClickCallback(object : UsersAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ResponseUsersItem) {
@@ -93,10 +93,10 @@ class DetailFollowFragment : Fragment() {
 
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {
-            binding.errorComp.tvErrorMessage.visibility = View.GONE
-            binding.loadingComp.llLoading.visibility = View.VISIBLE
+            binding?.errorComp?.tvErrorMessage?.visibility  = View.GONE
+                    binding?.loadingComp?.llLoading?.visibility = View.VISIBLE
         } else {
-            binding.loadingComp.llLoading.visibility = View.GONE
+            binding?.loadingComp?.llLoading?.visibility = View.GONE
         }
     }
 
