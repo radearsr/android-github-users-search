@@ -10,4 +10,14 @@
     <string name="tab_follower">FOLLOWERS</string>
     <string name="tab_following">FOLLOWING</string>
     <string name="github_logo">Github Logo</string>
+    <string name="fab_description">Fab Button Favorite</string>
+    <string name="favorite">Favorite</string>
+    <string name="btn_desc_delete">Button Delete From Favorite</string>
+    <string name="favorite_not_found">You don\'t have a favorite user</string>
+    <string name="dialog_confirm">Konfirmasi</string>
+    <string name="dialog_message">Anda ingin menghapus %s dari favorite</string>
+    <string name="yes">Ya, Hapus</string>
+    <string name="no">Tidak</string>
+    <string name="change_theme">Change Theme</string>
+    <string name="favorite_users">Favorite Users</string>
 </resources>

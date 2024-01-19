@@ -1,10 +1,10 @@
-package com.radea.githubuser.adapter
+package com.radea.githubuser.ui.common
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.radea.githubuser.data.response.ResponseUsersItem
+import com.radea.githubuser.data.remote.response.ResponseUsersItem
 import com.radea.githubuser.databinding.ItemListUserBinding
 
 class UsersAdapter(

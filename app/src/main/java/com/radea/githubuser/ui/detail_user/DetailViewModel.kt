@@ -1,12 +1,12 @@
-package com.radea.githubuser.data.viewmodel
+package com.radea.githubuser.ui.detail_user
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.radea.githubuser.data.response.ResponseDetailsUser
-import com.radea.githubuser.data.response.ResponseUsersItem
-import com.radea.githubuser.data.retrofit.ApiConfig
+import com.radea.githubuser.data.remote.response.ResponseDetailsUser
+import com.radea.githubuser.data.remote.response.ResponseUsersItem
+import com.radea.githubuser.data.remote.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,10 +38,6 @@ class DetailViewModel : ViewModel() {
 
     private val _isFollowingError = MutableLiveData<String>()
     val isFollowingError: LiveData<String> = _isFollowingError
-
-    companion object {
-        private val TAG = DetailViewModel::class.java.simpleName
-    }
 
     fun findDetailUser(username: String) {
         _isDetailLoading.value = true
@@ -120,5 +116,7 @@ class DetailViewModel : ViewModel() {
         })
     }
 
-
+    companion object {
+        private val TAG = DetailViewModel::class.java.simpleName
+    }
 }

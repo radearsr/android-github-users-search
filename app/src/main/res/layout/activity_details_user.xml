@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?attr/colorOnPrimary"
     android:orientation="vertical"
-    tools:context=".ui.DetailsUserActivity">
+    tools:context=".ui.detail_user.DetailsUserActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
@@ -20,9 +20,9 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/border_bottom"
             app:navigationIcon="@drawable/baseline_arrow_back_24"
-            app:navigationIconTint="@color/black"
+            app:navigationIconTint="?attr/colorPrimaryFixed"
             app:title="@string/details_user"
-            app:titleTextColor="@color/black" />
+            app:titleTextColor="?attr/colorPrimaryFixed" />
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -38,7 +38,7 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tv_fullname"
+        android:id="@+id/tv_full_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/siv_profile"
@@ -49,20 +49,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/siv_profile"
-        tools:text="@tools:sample/first_names" />
+        tools:text="@tools:sample/first_names"
+        android:textColor="?attr/colorOnSecondary"
+        />
 
     <TextView
         android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_fullname"
+        android:layout_below="@+id/tv_full_name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_fullname"
-        tools:text="@tools:sample/first_names" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_full_name"
+        tools:text="@tools:sample/first_names"
+        android:textColor="?attr/colorOnSecondary"
+        />
 
     <TextView
         android:id="@+id/tv_followers"
@@ -74,7 +78,9 @@
         android:text="@string/followers"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_username"
+        android:textColor="?attr/colorOnSecondary"
+        />
 
     <TextView
         android:id="@+id/tv_following"
@@ -87,7 +93,9 @@
         app:layout_constraintEnd_toStartOf="@+id/tv_repositories"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toEndOf="@+id/tv_followers"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_username"
+        android:textColor="?attr/colorOnSecondary"
+        />
 
     <TextView
         android:id="@+id/tv_repositories"
@@ -99,7 +107,8 @@
         android:text="@string/repositories"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_username"
+        android:textColor="?attr/colorOnSecondary"/>
 
     <include
         android:id="@+id/loading_comp"
@@ -129,12 +138,12 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_following"
-        app:tabIndicatorColor="@color/blue"
-        app:tabTextColor="@color/blue" />
+        app:tabIndicatorColor="?attr/colorPrimary"
+        app:tabTextColor="?attr/colorPrimary" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
@@ -145,5 +154,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabs" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/fab_description"
+        android:src="@drawable/baseline_favorite_border_24"
+        app:backgroundTint="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="?attr/colorPrimaryFixed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

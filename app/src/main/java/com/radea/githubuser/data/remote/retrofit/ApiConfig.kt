@@ -1,4 +1,4 @@
-package com.radea.githubuser.data.retrofit
+package com.radea.githubuser.data.remote.retrofit
 
 import com.radea.githubuser.BuildConfig
 import okhttp3.Interceptor

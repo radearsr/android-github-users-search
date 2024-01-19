@@ -1,8 +1,8 @@
-package com.radea.githubuser.data.retrofit
+package com.radea.githubuser.data.remote.retrofit
 
-import com.radea.githubuser.data.response.ResponseDetailsUser
-import com.radea.githubuser.data.response.ResponseUsersItem
-import com.radea.githubuser.data.response.ResponseUsersSearch
+import com.radea.githubuser.data.remote.response.ResponseDetailsUser
+import com.radea.githubuser.data.remote.response.ResponseUsersItem
+import com.radea.githubuser.data.remote.response.ResponseUsersSearch
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

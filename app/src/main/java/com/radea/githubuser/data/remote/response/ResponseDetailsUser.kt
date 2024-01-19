@@ -1,4 +1,4 @@
-package com.radea.githubuser.data.response
+package com.radea.githubuser.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 

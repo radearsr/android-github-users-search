@@ -1,4 +1,4 @@
-package com.radea.githubuser.ui
+package com.radea.githubuser.ui.detail_user
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.radea.githubuser.adapter.UsersAdapter
-import com.radea.githubuser.data.response.ResponseUsersItem
-import com.radea.githubuser.data.viewmodel.DetailViewModel
+import com.radea.githubuser.ui.common.UsersAdapter
+import com.radea.githubuser.data.remote.response.ResponseUsersItem
 import com.radea.githubuser.databinding.FragmentDetailFollowBinding
 
 class DetailFollowFragment : Fragment() {

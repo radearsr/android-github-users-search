@@ -18,5 +18,6 @@
         android:visibility="gone"
         tools:visibility="visible"
         android:textStyle="bold"
+        android:textColor="?attr/colorOnSecondary"
         app:drawableTopCompat="@drawable/baseline_assignment_late_24" />
 </LinearLayout>

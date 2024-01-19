@@ -1,10 +1,9 @@
-package com.radea.githubuser.adapter
+package com.radea.githubuser.ui.detail_user
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.radea.githubuser.ui.DetailFollowFragment
 
 class SectionPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
     var username: String = ""

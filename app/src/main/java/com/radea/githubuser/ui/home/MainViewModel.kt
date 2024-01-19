@@ -1,17 +1,21 @@
-package com.radea.githubuser.data.viewmodel
+package com.radea.githubuser.ui.home
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.radea.githubuser.data.response.ResponseUsersItem
-import com.radea.githubuser.data.response.ResponseUsersSearch
-import com.radea.githubuser.data.retrofit.ApiConfig
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
+import com.radea.githubuser.data.remote.response.ResponseUsersItem
+import com.radea.githubuser.data.remote.response.ResponseUsersSearch
+import com.radea.githubuser.data.remote.retrofit.ApiConfig
+import com.radea.githubuser.utils.SettingPreferences
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel : ViewModel() {
+class MainViewModel(private val pref: SettingPreferences) : ViewModel() {
     private val _listUser = MutableLiveData<List<ResponseUsersItem>>()
     val listUser: LiveData<List<ResponseUsersItem>> = _listUser
 
@@ -20,11 +24,6 @@ class MainViewModel : ViewModel() {
 
     private val _isError = MutableLiveData<String>()
     val isError: LiveData<String> = _isError
-
-    companion object {
-        private val TAG = MainViewModel::class.java.simpleName
-    }
-
 
     fun findGithubUsers() {
         _isLoading.value = true
@@ -70,5 +69,19 @@ class MainViewModel : ViewModel() {
                 Log.e(TAG, "onFailure: ${t.message}")
             }
         })
+    }
+
+    fun getThemeSettings(): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
+    }
+
+    fun saveThemeSetting(isDarkModeActive: Boolean) {
+        viewModelScope.launch {
+            pref.saveThemeSetting(isDarkModeActive)
+        }
+    }
+
+    companion object {
+        private val TAG = MainViewModel::class.java.simpleName
     }
 }

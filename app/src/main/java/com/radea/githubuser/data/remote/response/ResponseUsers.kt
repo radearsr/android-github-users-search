@@ -1,16 +1,16 @@
-package com.radea.githubuser.data.response
+package com.radea.githubuser.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
 data class ResponseUsersSearch(
 
-	@field:SerializedName("total_count")
+    @field:SerializedName("total_count")
 	val totalCount: Int,
 
-	@field:SerializedName("incomplete_results")
+    @field:SerializedName("incomplete_results")
 	val incompletedResults: Boolean,
 
-	@field:SerializedName("items")
+    @field:SerializedName("items")
 	val items: List<ResponseUsersItem>,
 )
 
